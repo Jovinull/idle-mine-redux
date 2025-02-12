@@ -1,0 +1,26 @@
+{
+    "name": "idle-mine-redux",
+    "version": "1.0.0",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron .",
+        "package": "electron-packager . DLE-MINE-REDUX --platform=win32 --arch=x64 --out=dist"
+    },
+    "description": "Idle Mine Redux é um projeto de melhoria e expansão do jogo original **Idle Mine Remix**, criado por [veprogames](https://github.com/veprogames/idle-mine-remix). Este projeto visa corrigir bugs, melhorar a experiência do usuário e adicionar novas funcionalidades ao jogo original.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Jovinull/idle-mine-redux.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/Jovinull/idle-mine-redux/issues"
+    },
+    "homepage": "https://github.com/Jovinull/idle-mine-redux#readme",
+    "devDependencies": {
+        "electron": "^34.1.1",
+        "electron-packager": "^17.1.2"
+    }
+}
