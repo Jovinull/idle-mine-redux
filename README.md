@@ -48,3 +48,51 @@ Inclui os estilos CSS utilizados no projeto:
 - **`index.html`:** Arquivo principal do jogo.
 - **`LICENSE`:** Licença do projeto original.
 - **`README.md`:** Documentação do projeto.
+
+## Como Criar um Executável do Jogo
+Se deseja transformar o Idle Mine Redux em um executável (.exe) utilizando Electron, siga os passos abaixo:
+
+### 1 - Instalar Dependências
+Certifique-se de que possui o **Node.js** instalado e execute o seguinte comando na raiz do projeto para instalar as dependências:
+```bash
+npm install
+```
+
+### 2 - Configurar o Electron
+O projeto já está configurado para Electron. No entanto, se precisar garantir que o Electron está instalado localmente, use:
+```bash
+npm install electron electron-packager --save-dev
+```
+
+### 3 - Criar o Executável
+Para gerar o executável do jogo, use o comando:
+```bash
+npm run package
+```
+Isso criará uma pasta `dist/` contendo o executável e todos os arquivos necessários.
+
+### 4 - Onde Encontrar o Executável
+Após rodar o comando acima, o executável estará disponível em:
+```
+dist/DLE-MINE-REDUX/
+```
+Dentro dessa pasta, você encontrará o arquivo **`DLE-MINE-REDUX.exe`** e os arquivos necessários para execução.
+
+### 5 - Empacotar para Distribuição
+Para facilitar o envio e compartilhamento do jogo, compacte a pasta `dist/DLE-MINE-REDUX/` em um arquivo `.zip`:
+```bash
+zip -r DLE-MINE-REDUX-v1.0.0-win64.zip dist/DLE-MINE-REDUX/
+```
+
+Agora você pode subir esse arquivo `.zip` no GitHub como uma release!
+
+### 6 - Criar uma Release no GitHub
+1. Acesse o repositório no **GitHub**.
+2. Vá para a aba **"Releases"**.
+3. Clique em **"Draft a new release"**.
+4. Preencha:
+   - **Tag:** `v1.0.0` (ou a versão do jogo).
+   - **Título:** "DLE Mine Redux v1.0.0".
+   - **Descrição:** Explique as mudanças da versão.
+5. **Anexe o arquivo `.zip`** gerado.
+6. Clique em **"Publish Release"**.
