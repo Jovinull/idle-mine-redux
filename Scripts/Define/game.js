@@ -538,7 +538,8 @@ var game =
                 numberFormatterIndex: 0,
                 exportFieldString: "Exported String will appear here...",
                 showMineObjLevel: false,
-                showMinCraftDamage: false
+                showMinCraftDamage: false,
+                language: "en"
             }
     }
 ;

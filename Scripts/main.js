@@ -90,13 +90,13 @@ function drawStone(ctx, color, layer, skin)
     ctx.globalCompositeOperation = "source-over";
 }
 
-var app = new Vue(
-    {
-        el: "#app",
-        data: game,
-        methods: functions,
-        created: onCreate
-    });
+var app = new Vue({
+    el: "#app",
+    data: game,
+    methods: functions,
+    created: onCreate,
+    i18n,
+});
 
 onkeydown = e =>
 {

@@ -22,5 +22,8 @@
     "devDependencies": {
         "electron": "^34.1.1",
         "electron-packager": "^17.1.2"
+    },
+    "dependencies": {
+        "idle-mine-redux": "file:"
     }
 }

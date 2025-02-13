@@ -147,6 +147,11 @@
         <article v-if="settings.tab === 'settings'" class="settings">
             <h2>Settings</h2>
             <p>Change the Number Format of the Game, Save manually or export and import your Game.</p>
+            <span>Language</span>
+            <select @change="changeLanguage($event.target.value)" :value="settings.language">
+                <option value="en">English</option>
+                <option value="pt">Português</option>
+            </select>                    
             <span>Number Format</span>
             <select ref="numberformatselect" @input="numberFormatter = numberFormatters[$event.target.selectedIndex]; settings.numberFormatterIndex = $event.target.selectedIndex;"><option v-for="(f, i) in numberFormatters">{{f.name}}</option></select>
             <br/>
@@ -158,7 +163,7 @@
             <br/>
             <label><span>Show minimum Base Damage for crafted Pickaxes</span><input type="checkbox" v-model="settings.showMinCraftDamage"/></label>
             <br/>
-            <button @click="saveGame()">Save</button>
+            <button @click="saveGame()">{{ $t('save') }}</button>
             <button @click="exportGame()">Export</button>
             <button @click="loadGame(settings.exportFieldString)">Import (from Text Field)</button>
             <button @click="hardReset()">Hard Reset</button><br/>
@@ -185,46 +190,51 @@
             </div>
             <div class="story-milestones" ref="storymilestones">
                 <div v-if="storyDisplayed('gameStart')">
-                    <h3>Welcome to Idle Mine: Remix!</h3>
-                    <p>So you have decided to start with mining. You have heard that many treasures lie down below the surface, so you
-                    can't wait to find out what you can find. Maybe you can become rich?<br/>
-                    There's you, and your Auto-Mining-Device. Let's get started!</p>
-                    <p>This also acts as s sort of guide. If something is unclear, look into here as a reference.</p>
+                    <h3>{{ $t('story.gameStart.title') }}</h3>
+                    <p>{{ $t('story.gameStart.text1') }}</p>
+                    <p>{{ $t('story.gameStart.text2') }}</p>
                 </div>
+            
                 <div v-if="storyDisplayed('firstMud')">
-                    <p>You mined your first piece of <b>Mud</b>! Well, it's not worth a lot, but you've got to start somewhere.</p>
-                    <div class="story-quote"><mine-object :level="0" :nodamage="true"></mine-object><span>Just some ordinary Mud</span></div>
-                    <p>Even 2 $ can be a good start. Maybe you should try to mine something more precious?</p>
+                    <p>{{ $t('story.firstMud.text1') }}</p>
+                    <div class="story-quote">
+                        <mine-object :level="0" :nodamage="true"></mine-object>
+                        <span>{{ $t('story.firstMud.quote') }}</span>
+                    </div>
+                    <p>{{ $t('story.firstMud.text2') }}</p>
                 </div>
+            
                 <div v-if="storyDisplayed('firstPaper')">
-                    <p>You take your Pickaxe and proceed to hit some old homework with it (You didn't need it anymore, anyways).</p>
-                    <div class="story-quote"><mine-object :level="1" :nodamage="true"></mine-object><span>Paper (Your old Homework)</span></div>
-                    <p>For some reason it was worth a whopping 10 $! It seems like you've got the hang of it. Unfortunately, you also find out
-                    that it was kind of resistent to your pickaxe, so you need to craft a better one to keep growing. Luckily you have this rusty
-                    Blacksmith at home (for whatever reason). It doesnt look good enough though. You should try to Upgrade it.</p>
-                    <h4>How do I get Gems?</h4>
-                    <p>Every time you mine something, there is a chance that you will be awarded a Gem, used to craft Pickaxes.</p>
-                    <h4>Stats, Stats, Stats...</h4>
-                    <p>Some general Tips: Every Mineral has defense, which is an absolute reduction to click and idle damage.
-                    To find out what's the most efficient to mine, look at where Money/s and Money per Click are the highest.
-                    More gems/s mean that you can get gems faster to craft new Pickaxes. The base Damage of a pickaxe is calculated
-                    by multiplying its power with the quality (for example: 1,000 * 150% = 1,500). After that, Active and Idle Power
-                    Upgrades are applied.</p>
+                    <p>{{ $t('story.firstPaper.text1') }}</p>
+                    <div class="story-quote">
+                        <mine-object :level="1" :nodamage="true"></mine-object>
+                        <span>{{ $t('story.firstPaper.quote') }}</span>
+                    </div>
+                    <p>{{ $t('story.firstPaper.text2') }}</p>
+                    <h4>{{ $t('story.firstPaper.howToGetGems') }}</h4>
+                    <p>{{ $t('story.firstPaper.gemExplanation') }}</p>
+                    <h4>{{ $t('story.firstPaper.statsTitle') }}</h4>
+                    <p>{{ $t('story.firstPaper.statsText') }}</p>
                 </div>
+            
                 <div v-if="storyDisplayed('blacksmithUpgrade')">
-                    <p>Just a little improvement to your Blacksmith makes it seem much stronger!</p>
-                    <div class="story-quote"><img src="Images/upgrades/blacksmith.png"/><span>Blacksmith Power!</span></div>
-                    <p>You should try to craft a new Pickaxe. You only need one Gem to do it! Luckily you have a few of them at home. You don't
-                    remember when you got them, they are just here for some reason. After crafting, you should try your luck with salt.</p>
-                    <h3>When should I craft?</h3>
-                    <p>The power and quality of a pickaxe is based on Blacksmith Upgrades. The resulting power and quality will be random,
-                        but will at least be as much as the minimum power and quality.</p>
+                    <p>{{ $t('story.blacksmithUpgrade.text1') }}</p>
+                    <div class="story-quote">
+                        <img src="Images/upgrades/blacksmith.png"/>
+                        <span>{{ $t('story.blacksmithUpgrade.quote') }}</span>
+                    </div>
+                    <p>{{ $t('story.blacksmithUpgrade.text2') }}</p>
+                    <h3>{{ $t('story.blacksmithUpgrade.whenToCraft') }}</h3>
+                    <p>{{ $t('story.blacksmithUpgrade.craftExplanation') }}</p>
                 </div>
+            
                 <div v-if="storyDisplayed('firstSalt')">
-                    <p>You take out all the salt from your kitchen drawer, and start to hammer on it with your newly crafted Pickaxe. It works
-                    surpisingly well, you think.</p>
-                    <div class="story-quote"><mine-object :level="2" :nodamage="true"></mine-object><span>Salt (from your Kitchen Drawer)</span></div>
-                    <p>22 $! That is sure a lot. You could buy some Games from it, or you take it serious and invest the money into your blacksmith.</p>
+                    <p>{{ $t('story.firstSalt.text1') }}</p>
+                    <div class="story-quote">
+                        <mine-object :level="2" :nodamage="true"></mine-object>
+                        <span>{{ $t('story.firstSalt.quote') }}</span>
+                    </div>
+                    <p>{{ $t('story.firstSalt.text2') }}</p>
                 </div>
                 <div v-if="storyDisplayed('firstClay')">
                     <p>You go to a nearby lake and dig out some clay.</p>
@@ -577,6 +587,7 @@
 <!-- development version, includes helpful console warnings -->
 <!--<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>-->
 <!-- production version, optimized for size and speed -->
+<script src="https://unpkg.com/vue-i18n@8"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/break_infinity.js"></script>
@@ -598,6 +609,7 @@
 <script src="Scripts/Define/game.js"></script>
 <script src="Scripts/Define/functions.js"></script>
 
+<script src="Scripts/i18n.js"></script>
 <script src="Scripts/main.js"></script>
 
 </body>

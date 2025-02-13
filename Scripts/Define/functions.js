@@ -611,6 +611,11 @@ var functions =
             game.messageLog = [];
             game.usedGemsLevel = 0;
         },
+        changeLanguage: function(lang) {
+            app.$i18n.locale = lang;
+            game.settings.language = lang;
+            saveGame();
+        },        
         keyPressed: function(k)
         {
             return Utils.keyPressed(k)
