@@ -320,15 +320,52 @@ const messages = {
                 text2: "I wonder how far the numbers can go! Through gem upgrades, progress should always be possible, and a progress wall should be very far away. Can you reach {longGoal1} $?<br/> Nah, your wisdom should make it even faster... can you reach {longGoal2} $? That's ∞<sup>4</sup>!",
                 text3: "This doesn’t mean it’s the end forever. I might add new content in the future to extend the story. Anyway, I hope you had fun playing! :)"
             },
-            "nextObjective": {
-                "title": "O que fazer em seguida?"
+            nextObjective: {
+                title: "O que fazer em seguida?"
             }
         },
-        "tabs": {
-            "mining": "Mining",
-            "powers": "Powers",
-            "story": "Story",
-            "settings": "Settings"
+        tabs: {
+            mining: "Mining",
+            powers: "Powers",
+            story: "Story",
+            settings: "Settings"
+        },
+        meta: {
+            title: "Idle Mine: Remix",
+            description: "Incremental Game based on Idle Mine by Crovie."
+        },
+        settings: {
+            title: "Settings",
+            description: "Change the Number Format of the Game, Save manually or export and import your Game.",
+            language: "Language",
+            languageOptions: {
+                "en": "English",
+                "pt": "Português"
+            },
+            numberFormat: "Number Format",
+            theme: "Theme",
+            themeOptions: {
+                light: "Light",
+                dark: "Dark"
+            },
+            showMineObjLevel: "Show Mineral Level",
+            showMinCraftDamage: "Show minimum Base Damage for crafted Pickaxes",
+            export: "Export",
+            import: "Import (from Text Field)",
+            hardReset: "Hard Reset",
+            note: "Note: The Game won't save if cookies and browser storage are disabled. Clearing cookies and browser data might erase your savegame.",
+            thanks: "Thanks to crovie, the creator of Idle Mine for making this interesting Game concept.",
+            notations: "Notations provided by",
+            social: {
+                youtube: "My YouTube",
+                website: "My Website",
+                wiki: "Wiki"
+            },
+            upgrades: {
+                money: "Money Upgrades",
+                gems: "Gem Upgrades",
+                planetcoins: "PC Upgrades"
+            },
         }
     },
     pt: {
@@ -652,15 +689,52 @@ const messages = {
                 text2: "Eu me pergunto até onde os números podem chegar! Com os upgrades de gemas, o progresso deve ser sempre possível, e um obstáculo de progresso deve estar muito distante. Você pode alcançar {longGoal1} $?<br/> Não, sua sabedoria deve torná-lo ainda mais rápido... será que você pode alcançar {longGoal2} $? Isso é ∞<sup>4</sup>!",
                 text3: "Isso não significa que seja o fim para sempre. Posso adicionar novo conteúdo no futuro para estender a história. De qualquer forma, espero que tenha se divertido jogando! :)"
             },
-            "nextObjective": {
-                "title": "What to do next?"
+            nextObjective: {
+                title: "What to do next?"
             }
         },
-        "tabs": {
-            "mining": "Mineração",
-            "powers": "Poderes",
-            "story": "História",
-            "settings": "Configurações"
+        tabs: {
+            mining: "Mineração",
+            powers: "Poderes",
+            story: "História",
+            settings: "Configurações"
+        },
+        meta: {
+            title: "Idle Mine: Remix",
+            description: "Jogo incremental baseado no Idle Mine de Crovie."
+        },
+        settings: {
+            title: "Configurações",
+            description: "Altere o formato numérico do jogo, salve manualmente ou exporte e importe seu progresso.",
+            language: "Idioma",
+            languageOptions: {
+                en: "Inglês",
+                pt: "Português"
+            },
+            numberFormat: "Formato Numérico",
+            theme: "Tema",
+            themeOptions: {
+                light: "Claro",
+                dark: "Escuro"
+            },
+            showMineObjLevel: "Mostrar Nível do Mineral",
+            showMinCraftDamage: "Mostrar Dano Base Mínimo para Picaretas Criadas",
+            export: "Exportar",
+            import: "Importar (do Campo de Texto)",
+            hardReset: "Resetar Tudo",
+            note: "Nota: O jogo não será salvo se os cookies e o armazenamento do navegador estiverem desativados. Limpar cookies e dados do navegador pode apagar seu progresso.",
+            thanks: "Obrigado a crovie, o criador do Idle Mine, por criar este interessante conceito de jogo.",
+            notations: "Notações fornecidas por",
+            social: {
+                youtube: "Meu YouTube",
+                website: "Meu Site",
+                wiki: "Wiki"
+            },
+            upgrades: {
+                money: "Melhorias de Dinheiro",
+                gems: "Melhorias de Gemas",
+                planetcoins: "Melhorias de Moedas Planetárias"
+            }
         }
     }
 };

@@ -1,28 +1,25 @@
 <!doctype html>
 <html>
-<head>
-    <title>Idle Mine: Remix</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <link rel="stylesheet" href="main.css"/>
-    <link id="css_theme" rel="stylesheet" href="Themes/light.css"/>
-
-    <meta name="description"
-            content="Incremental Game based on Idle Mine by Crovie."/>
-    <meta name="keywords" content="games, game, idle, incremental, idle mine. idle mine remix"/>
-    <meta name="url" content="https://veprogames.github.io/idle-mine-remix"/>
-    <meta name="og:title" content="Idle Mine: Remix"/>
-    <meta name="og:type" content="website"/>
-    <meta name="og:url" content="https://veprogames.github.io/idle-mine-remix"/>
-    <meta name="og:description"
-            content="Incremental Game based on Idle Mine by Crovie."/>
-    <meta name="og:image" content="https://veprogames.github.io/idle-mine-remix/Images/logo.png"/>
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:title" content="Idle Mine: Remix"/>
-    <meta name="twitter:description"
-            content="Incremental Game based on Idle Mine by Crovie."/>
-    <meta name="twitter:image" content="https://veprogames.github.io/idle-mine-remix/Images/logo.png"/>
-</head>
+    <head>
+        <title>{{ $t('meta.title') }}</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <link rel="stylesheet" href="main.css"/>
+        <link id="css_theme" rel="stylesheet" href="Themes/light.css"/>
+    
+        <meta name="description" :content="$t('meta.description')"/>
+        <meta name="keywords" content="games, game, idle, incremental, idle mine, idle mine remix"/>
+        <meta name="url" content="https://veprogames.github.io/idle-mine-remix"/>
+        <meta name="og:title" :content="$t('meta.title')"/>
+        <meta name="og:type" content="website"/>
+        <meta name="og:url" content="https://veprogames.github.io/idle-mine-remix"/>
+        <meta name="og:description" :content="$t('meta.description')"/>
+        <meta name="og:image" content="https://veprogames.github.io/idle-mine-remix/Images/logo.png"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" :content="$t('meta.title')"/>
+        <meta name="twitter:description" :content="$t('meta.description')"/>
+        <meta name="twitter:image" content="https://veprogames.github.io/idle-mine-remix/Images/logo.png"/>
+    </head>    
 <body>
 
 <div id="app">
@@ -54,15 +51,15 @@
             <div>
                 <div class="upg-tabs" v-if="gemUpgradesUnlocked()">
                     <button @click="settings.upgradeTab = 'money'">
-                        <span class="inline-resource"><img class="inline" src="Images/money.png"/> Money Upgrades</span>
+                        <span class="inline-resource"><img class="inline" src="Images/money.png"/> {{ $t('upgrades.money') }}</span>
                     </button>
                     <button @click="settings.upgradeTab = 'gems'">
-                        <span class="inline-resource"><img class="inline" src="Images/gem.png"/> Gem Upgrades</span>
+                        <span class="inline-resource"><img class="inline" src="Images/gem.png"/> {{ $t('upgrades.gems') }}</span>
                     </button>
                     <button @click="settings.upgradeTab = 'planetcoins'" v-if="highestMineObjectLevel >= 90">
-                        <span class="inline-resource"><img class="inline" src="Images/planetcoin.png"/> PC Upgrades</span>
+                        <span class="inline-resource"><img class="inline" src="Images/planetcoin.png"/> {{ $t('upgrades.planetcoins') }}</span>
                     </button>
-                </div>
+                </div>                
                 <div class="upgradelist-wrapper">
                     <div class="upgradelist" v-if="settings.upgradeTab === 'money'">
                         <upgrade v-for="u in upgrades" :key="u.name" :upg="u"></upgrade>
@@ -145,43 +142,64 @@
             </div>
         </article>
         <article v-if="settings.tab === 'settings'" class="settings">
-            <h2>Settings</h2>
-            <p>Change the Number Format of the Game, Save manually or export and import your Game.</p>
-            <span>Language</span>
+            <h2>{{ $t('settings.title') }}</h2>
+            <p>{{ $t('settings.description') }}</p>
+        
+            <span>{{ $t('settings.language') }}</span>
             <select @change="changeLanguage($event.target.value)" :value="settings.language">
-                <option value="en">English</option>
-                <option value="pt">Português</option>
-            </select>                    
-            <span>Number Format</span>
-            <select ref="numberformatselect" @input="numberFormatter = numberFormatters[$event.target.selectedIndex]; settings.numberFormatterIndex = $event.target.selectedIndex;"><option v-for="(f, i) in numberFormatters">{{f.name}}</option></select>
+                <option value="en">{{ $t('settings.languageOptions.en') }}</option>
+                <option value="pt">{{ $t('settings.languageOptions.pt') }}</option>
+            </select>
+        
+            <span>{{ $t('settings.numberFormat') }}</span>
+            <select ref="numberformatselect" @input="numberFormatter = numberFormatters[$event.target.selectedIndex]; settings.numberFormatterIndex = $event.target.selectedIndex;">
+                <option v-for="(f, i) in numberFormatters">{{ f.name }}</option>
+            </select>
+        
             <br/>
-            <span>Theme</span>
-            <button @click="setTheme('light'); saveGame();">Light</button>
-            <button @click="setTheme('dark'); saveGame();">Dark</button>
+        
+            <span>{{ $t('settings.theme') }}</span>
+            <button @click="setTheme('light'); saveGame();">{{ $t('settings.themeOptions.light') }}</button>
+            <button @click="setTheme('dark'); saveGame();">{{ $t('settings.themeOptions.dark') }}</button>
+        
             <br/>
-            <label><span>Show Mineral Level</span><input type="checkbox" v-model="settings.showMineObjLevel"/></label>
+        
+            <label>
+                <span>{{ $t('settings.showMineObjLevel') }}</span>
+                <input type="checkbox" v-model="settings.showMineObjLevel"/>
+            </label>
+        
             <br/>
-            <label><span>Show minimum Base Damage for crafted Pickaxes</span><input type="checkbox" v-model="settings.showMinCraftDamage"/></label>
+        
+            <label>
+                <span>{{ $t('settings.showMinCraftDamage') }}</span>
+                <input type="checkbox" v-model="settings.showMinCraftDamage"/>
+            </label>
+        
             <br/>
+        
             <button @click="saveGame()">{{ $t('save') }}</button>
-            <button @click="exportGame()">Export</button>
-            <button @click="loadGame(settings.exportFieldString)">Import (from Text Field)</button>
-            <button @click="hardReset()">Hard Reset</button><br/>
-            <p>Note: The Game won't save if cookies and browser storage are disabled. Clearing cookies and browser data might erase
-            your savegame.</p>
+            <button @click="exportGame()">{{ $t('settings.export') }}</button>
+            <button @click="loadGame(settings.exportFieldString)">{{ $t('settings.import') }}</button>
+            <button @click="hardReset()">{{ $t('settings.hardReset') }}</button>
+        
+            <br/>
+        
+            <p>{{ $t('settings.note') }}</p>
             <textarea v-model="settings.exportFieldString"></textarea>
-            <p>Thanks to crovie, the creator of <a target="_blank" href="https://www.kongregate.com/games/crovie/idle-mine"><i>Idle Mine</i></a>
-            for making this interesting Game concept.</p>
-            <p>Notations provided by <a target="_blank" href="https://github.com/antimatter-dimensions/notations"><i>ad-notations</i></a>.</p>
+        
+            <p>{{ $t('settings.thanks') }} <a target="_blank" href="https://www.kongregate.com/games/crovie/idle-mine"><i>Idle Mine</i></a></p>
+            <p>{{ $t('settings.notations') }} <a target="_blank" href="https://github.com/antimatter-dimensions/notations"><i>ad-notations</i></a>.</p>
+        
             <div class="social">
                 <a target="_blank" href="https://www.youtube.com/veprogames"><img src="Images/social/youtube.png"/></a>
-                <span>My YouTube</span>
+                <span>{{ $t('settings.social.youtube') }}</span>
                 <a target="_blank" href="https://veprogames.github.io"><img src="Images/social/cook1eegames.png"/></a>
-                <span>My Website</span>
+                <span>{{ $t('settings.social.website') }}</span>
                 <a target="_blank" href="https://idle-mine-remix.fandom.com/wiki/"><img src="Images/social/wiki.png"/></a>
-                <span>Wiki</span>
+                <span>{{ $t('settings.social.wiki') }}</span>
             </div>
-        </article>
+        </article>        
         <article v-if="settings.tab === 'story'" class="story">
             <div class="chapter-control">
                 <button @click="decreaseStoryPage"><img v-if="story.page > 0" class="left" src="Images/btn_left.png"/></button>
