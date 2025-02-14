@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>{{ $t('meta.title') }}</title>
+        <title>Idle Mine: Remix</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="main.css"/>
@@ -79,9 +79,15 @@
                         <span><b>{{highlightedUpgrade.getPriceDisplay()}}</b></span><br/>
                     </div>
                     <div>
-                        <p><span class="multibuy" :class="{active: keyPressed('Shift') && !keyPressed('Control')}">Hold SHIFT to buy 10</span><br/>
-                            <span class="multibuy" :class="{active: keyPressed('Control')}">Hold CTRL to buy 100</span></p>
-                    </div>
+                        <p>
+                            <span class="multibuy" :class="{active: keyPressed('Shift') && !keyPressed('Control')}">
+                                {{ $t('multibuy.shift') }}
+                            </span><br/>
+                            <span class="multibuy" :class="{active: keyPressed('Control')}">
+                                {{ $t('multibuy.ctrl') }}
+                            </span>
+                        </p>
+                    </div>                    
                 </div>
             </div>
             <div class="stats">
@@ -92,17 +98,17 @@
                     <p>Base Dmg: {{formatNumber(pickaxe.getDamage(), 2, 1e12)}}</p>
                 </div>
                 <div class="resources" style="text-align: right">
-                    <p :class="{red: getActiveDamage().eq(0)}">Damage/click<br/>{{formatNumber(getActiveDamage(), 2, 1e12)}}</p>
-                    <p :class="{red: getIdleDamage().eq(0)}" >Damage/s<br/>{{formatNumber(getIdleDPS(), 2, 1e12)}}</p>
-                    <p>Money per Click<br/>{{formatNumber(getMPC(), 2, 1e12, 2)}} $</p>
-                    <p>Money/s<br/>{{formatNumber(getMPS(), 2, 1e12, 2)}} $</p>
-                    <div>Avg. Gems/s<br/>
+                    <p :class="{red: getActiveDamage().eq(0)}">{{ $t('stats.damageClick') }}<br/>{{formatNumber(getActiveDamage(), 2, 1e12)}}</p>
+                    <p :class="{red: getIdleDamage().eq(0)}">{{ $t('stats.damageSecond') }}<br/>{{formatNumber(getIdleDPS(), 2, 1e12)}}</p>
+                    <p>{{ $t('stats.moneyClick') }}<br/>{{formatNumber(getMPC(), 2, 1e12, 2)}} $</p>
+                    <p>{{ $t('stats.moneySecond') }}<br/>{{formatNumber(getMPS(), 2, 1e12, 2)}} $</p>
+                    <div>{{ $t('stats.avgGemsSecond') }}<br/>
                         <p style="margin: 0;" class="inline-resource">{{formatNumber(getGPS(), 2, 1e12, 3)}} <img class="inline" src="Images/gem.png"/></p>
                     </div>
-                    <div v-if="maxPlanetCoins.gt(0)">Avg. Planet Coins/s<br/>
+                    <div v-if="maxPlanetCoins.gt(0)">{{ $t('stats.avgPlanetCoinsSecond') }}<br/>
                         <p style="margin: 0;" class="inline-resource">{{formatNumber(getPCPS(), 2, 1e12, 3)}} <img class="inline" src="Images/planetcoin.png"/></p>
                     </div>
-                </div>
+                </div>       
             </div>
             <div style="margin-top: 3.5rem;">
                 <div class="messagelog">
@@ -113,12 +119,18 @@
                         <img v-if="usedGemsLevel > 0" class="left level-change" src="Images/btn_left.png"/>
                     </button>
                     <button @click="craftPick(getUsedGems())">
-                        Craft a new Pickaxe <br/><span v-if="settings.showMinCraftDamage" style="font-size: 60%; display: block;">Minimum Base Damage: {{formatNumber(getMinCraftDamage(), 2, 1e12, 0)}}</span>
-                        <span class="inline-resource"><img class="inline" src="Images/gem.png"/>
-                            {{formatThousands(getUsedGems())}}
-                            <span v-if="keyPressed('Shift') && applyUpgrade(planetCoinUpgrades.bulkCraft).gt(1)">&nbsp;x {{applyUpgrade(planetCoinUpgrades.bulkCraft).toFixed(0)}}</span>
+                        {{ $t('pickaxe.craft') }} <br/>
+                        <span v-if="settings.showMinCraftDamage" style="font-size: 60%; display: block;">
+                            {{ $t('pickaxe.minBaseDamage') }}: {{ formatNumber(getMinCraftDamage(), 2, 1e12, 0) }}
                         </span>
-                    </button>
+                        <span class="inline-resource">
+                            <img class="inline" src="Images/gem.png"/>
+                            {{ formatThousands(getUsedGems()) }}
+                            <span v-if="keyPressed('Shift') && applyUpgrade(planetCoinUpgrades.bulkCraft).gt(1)">
+                                &nbsp;x {{ applyUpgrade(planetCoinUpgrades.bulkCraft).toFixed(0) }}
+                            </span>
+                        </span>
+                    </button>                    
                     <button class="level-change" @click="usedGemsLevel++" v-if="upgrades.gemWaster.level > 0"  :disabled="usedGemsLevel === upgrades.gemWaster.level + gemUpgrades.gemWaster.level">
                         <img v-if="usedGemsLevel < upgrades.gemWaster.level + gemUpgrades.gemWaster.level" class="right level-change" src="Images/btn_right.png"/>
                     </button>
@@ -126,11 +138,16 @@
             </div>
         </article>
         <article v-if="settings.tab === 'powers'" class="powers">
-            <p class="wisdom"><span class="inline-resource">You have <img class="inline" src="Images/wisdom.png"/> {{formatNumber(wisdom, 2, 1e12, 0)}}</span></p>
-            <p>With <img class="inline" src="Images/wisdom.png"/> wisdom, you are able to become smart enough to become stronger with every click! Get smart in all areas of mining to get to heights
-            no one has thought of yet.</p>
+            <p class="wisdom">
+                <span class="inline-resource">
+                    {{ $t('powers.youHave') }} <img class="inline" src="Images/wisdom.png"/> {{ formatNumber(wisdom, 2, 1e12, 0) }}
+                </span>
+            </p>
+            <p>
+                <img class="inline" src="Images/wisdom.png"/> {{ $t('powers.description') }}
+            </p>
             <powers-table :pow="powers.data"></powers-table>
-
+        
             <div class="powers-upgrades">
                 <upgrade-standalone :upg="powers.upgrades.powerPowerActive"></upgrade-standalone>
                 <upgrade-standalone :upg="powers.upgrades.powerPowerIdle"></upgrade-standalone>
@@ -140,7 +157,7 @@
                 <upgrade-standalone :upg="powers.upgrades.powerPowerPower"></upgrade-standalone>
                 <upgrade-standalone :upg="powers.upgrades.powerResetKeep"></upgrade-standalone>
             </div>
-        </article>
+        </article>        
         <article v-if="settings.tab === 'settings'" class="settings">
             <h2>{{ $t('settings.title') }}</h2>
             <p>{{ $t('settings.description') }}</p>
@@ -203,7 +220,7 @@
         <article v-if="settings.tab === 'story'" class="story">
             <div class="chapter-control">
                 <button @click="decreaseStoryPage"><img v-if="story.page > 0" class="left" src="Images/btn_left.png"/></button>
-                <h3>Chapter {{story.page + 1}}: {{story.chapters[story.page]}}</h3>
+                <h3>{{ $t('story.chapter', { number: story.page + 1, title: $t(`story.chapters[${story.page}]`) }) }}</h3>
                 <button @click="increaseStoryPage"><img v-if="story.page < getMaxStoryPage()" class="right" src="Images/btn_right.png"/></button>
             </div>
             <div class="story-milestones" ref="storymilestones">

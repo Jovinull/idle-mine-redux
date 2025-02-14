@@ -461,8 +461,6 @@ var game =
                 notifications: 0,
                 longGoal1: Decimal.pow(2, 1024),
                 longGoal2: Decimal.pow(2, 4096),
-                chapters: ["Welcome to Idle Mine: Remix!", "The real Adventure begins!",
-                    "Mysterious Materials", "It's NOT over", "New Dimensions", "Gone to Space", "Hyperplanets", "The Wisdom Era", "Cosmic Superstructures"],
                 milestones:
                     {
                         //[requirement, quest-text/what to do, page]

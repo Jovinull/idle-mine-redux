@@ -14,6 +14,17 @@ const messages = {
         welcome: "Welcome to Idle Mine: Remix!",
 
         story: {
+            chapters: [
+                "Welcome to Idle Mine: Remix!",
+                "The real Adventure begins!",
+                "Mysterious Materials",
+                "It's NOT over",
+                "New Dimensions",
+                "Gone to Space",
+                "Hyperplanets",
+                "The Wisdom Era",
+                "Cosmic Superstructures"
+            ],
             gameStart: {
                 title: "Welcome to Idle Mine: Remix!",
                 text1: "So you have decided to start with mining. You have heard that many treasures lie below the surface, so you can't wait to find out what you can find. Maybe you can become rich?",
@@ -321,8 +332,9 @@ const messages = {
                 text3: "This doesn’t mean it’s the end forever. I might add new content in the future to extend the story. Anyway, I hope you had fun playing! :)"
             },
             nextObjective: {
-                title: "O que fazer em seguida?"
-            }
+                title: "What to do next?"
+            },
+            chapter: "Chapter {number}: {title}"
         },
         tabs: {
             mining: "Mining",
@@ -331,7 +343,6 @@ const messages = {
             settings: "Settings"
         },
         meta: {
-            title: "Idle Mine: Remix",
             description: "Incremental Game based on Idle Mine by Crovie."
         },
         settings: {
@@ -365,8 +376,102 @@ const messages = {
                 money: "Money Upgrades",
                 gems: "Gem Upgrades",
                 planetcoins: "PC Upgrades"
-            },
-        }
+            }
+        },
+        stats: {
+            damageClick: "Damage per Click",
+            damageSecond: "Damage per Second",
+            moneyClick: "Money per Click",
+            moneySecond: "Money per Second",
+            avgGemsSecond: "Avg. Gems per Second",
+            avgPlanetCoinsSecond: "Avg. Planet Coins per Second"
+        },
+        pickaxe: {
+            craft: "Craft a new Pickaxe",
+            minBaseDamage: "Minimum Base Damage"
+        },
+        powers: {
+            youHave: "You have",
+            description: "With wisdom, you are able to become smart enough to become stronger with every click! Get smart in all areas of mining to get to heights no one has thought of yet."
+        },
+        multibuy: {
+            shift: "Hold SHIFT to buy 10",
+            ctrl: "Hold CTRL to buy 100"
+        },
+        mineObjects: {
+            mud: "Mud",
+            paper: "Paper",
+            salt: "Salt",
+            clay: "Clay",
+            rock: "Rock",
+            coal: "Coal",
+            bone: "Bone",
+            lead: "Lead",
+            iron: "Iron",
+            copper: "Copper",
+            carbonite: "Carbonite",
+            quartz: "Quartz",
+            spookyBone: "Spooky Bone",
+            silver: "Silver",
+            crystal: "Crystal",
+            topaz: "Topaz",
+            amethyst: "Amethyst",
+            aquamarine: "Aquamarine",
+            emerald: "Emerald",
+            ruby: "Ruby",
+            sapphire: "Sapphire",
+            hauntedBone: "Haunted Bone",
+            gold: "Gold",
+            platinum: "Platinum",
+            diamond: "Diamond",
+            mithril: "Mithril",
+            obsidian: "Obsidian",
+            earthEssence: "Earth Essence",
+            orbium: "Orbium",
+            novalite: "Novalite",
+            magicCrystal: "Magic Crystal",
+            darkstone: "Darkstone",
+            adamantium: "Adamantium",
+            fireEssence: "Fire Essence",
+            lunalite: "Lunalite",
+            mysterium: "Mysterium",
+            cursedBone: "Cursed Bone",
+            windEssence: "Wind Essence",
+            unobtanium: "Unobtanium",
+            sollite: "Sollite",
+            waterEssence: "Water Essence",
+            absurdium: "Absurdium",
+            cosmolite: "Cosmolite",
+            shadowEssence: "Shadow Essence",
+            demonite: "Demonite",
+            eternium: "Eternium",
+            mysticite: "Mysticite",
+            lightEssence: "Light Essence",
+            soulstone: "Soulstone",
+            arcanium: "Arcanium",
+            hellstone1: "Hellstone Lv. 1",
+            hellstone2: "Hellstone Lv. 2",
+            hellstone3: "Hellstone Lv. 3",
+            hellstone4: "Hellstone Lv. 4",
+            hellstone666: "Hellstone Lv. 666",
+            infinitum: "Infinitum",
+            omegaEssence: "Omega Essence",
+            inverticolite: "Inverticolite",
+            meutronium: "Meutronium",
+            zettaWattCrystal: "ZettaWatt Crystal",
+            theGem: "THE GEM",
+            boneOfInfinity: "Bone of Infinity",
+            paperOfGods: "Paper of the Gods",
+            heavenstone: "Heavenstone",
+            holoStone: "Holo-Stone",
+            antiMud: "Anti-Mud",
+            quantumOrb: "Quantum Orb",
+            sourceOfPower: "Source of Power",
+            fractalium: "Fractalium",
+            postInfinityEssence: "Post-Infinity Essence",
+            unsolvium: "Unsolvium",
+            thePortal: "THE PORTAL"
+        },
     },
     pt: {
         title: "Idle Mine: Remix",
@@ -383,6 +488,17 @@ const messages = {
         welcome: "Bem-vindo ao Idle Mine: Remix!",
 
         story: {
+            chapters: [
+                "Bem-vindo ao Idle Mine: Remix!",
+                "A verdadeira aventura começa!",
+                "Materiais misteriosos",
+                "Ainda NÃO acabou",
+                "Novas Dimensões",
+                "Foi para o Espaço",
+                "Hiperplanetas",
+                "A Era da Sabedoria",
+                "Superestruturas Cósmicas"
+            ],
             gameStart: {
                 title: "Bem-vindo ao Idle Mine: Remix!",
                 text1: "Então você decidiu começar a minerar. Você ouviu falar que muitos tesouros estão abaixo da superfície, então mal pode esperar para descobrir o que pode encontrar. Talvez você fique rico?",
@@ -690,8 +806,9 @@ const messages = {
                 text3: "Isso não significa que seja o fim para sempre. Posso adicionar novo conteúdo no futuro para estender a história. De qualquer forma, espero que tenha se divertido jogando! :)"
             },
             nextObjective: {
-                title: "What to do next?"
-            }
+                title: "O que fazer em seguida?"
+            },
+            chapter: "Capítulo {number}: {title}"
         },
         tabs: {
             mining: "Mineração",
@@ -700,7 +817,6 @@ const messages = {
             settings: "Configurações"
         },
         meta: {
-            title: "Idle Mine: Remix",
             description: "Jogo incremental baseado no Idle Mine de Crovie."
         },
         settings: {
@@ -735,11 +851,106 @@ const messages = {
                 gems: "Melhorias de Gemas",
                 planetcoins: "Melhorias de Moedas Planetárias"
             }
+        },
+        stats: {
+            damageClick: "Dano por Clique",
+            damageSecond: "Dano por Segundo",
+            moneyClick: "Dinheiro por Clique",
+            moneySecond: "Dinheiro por Segundo",
+            avgGemsSecond: "Média de Gemas por Segundo",
+            avgPlanetCoinsSecond: "Média de Moedas Planetárias por Segundo",
+          },
+        pickaxe: {
+            craft: "Criar uma nova Picareta",
+            minBaseDamage: "Dano Base Mínimo"
+        },
+        powers: {
+            youHave: "Você tem",
+            description: "Com sabedoria, você se torna inteligente o suficiente para ficar mais forte a cada clique! Torne-se especialista em todas as áreas da mineração para alcançar alturas que ninguém imaginou antes."
+        },
+        multibuy: {
+            shift: "Segure SHIFT para comprar 10",
+            ctrl: "Segure CTRL para comprar 100"
+        },
+        mineObjects: {
+            mud: "Lama",
+            paper: "Papel",
+            salt: "Sal",
+            clay: "Argila",
+            rock: "Pedra",
+            coal: "Carvão",
+            bone: "Osso",
+            lead: "Chumbo",
+            iron: "Ferro",
+            copper: "Cobre",
+            carbonite: "Carbonita",
+            quartz: "Quartzo",
+            spookyBone: "Osso Assustador",
+            silver: "Prata",
+            crystal: "Cristal",
+            topaz: "Topázio",
+            amethyst: "Ametista",
+            aquamarine: "Água-Marinha",
+            emerald: "Esmeralda",
+            ruby: "Rubi",
+            sapphire: "Safira",
+            hauntedBone: "Osso Assombrado",
+            gold: "Ouro",
+            platinum: "Platina",
+            diamond: "Diamante",
+            mithril: "Mithril",
+            obsidian: "Obsidiana",
+            earthEssence: "Essência da Terra",
+            orbium: "Orbium",
+            novalite: "Novalita",
+            magicCrystal: "Cristal Mágico",
+            darkstone: "Pedra Negra",
+            adamantium: "Adamantium",
+            fireEssence: "Essência de Fogo",
+            lunalite: "Lunalita",
+            mysterium: "Mysterium",
+            cursedBone: "Osso Amaldiçoado",
+            windEssence: "Essência do Vento",
+            unobtanium: "Unobtanium",
+            sollite: "Sollita",
+            waterEssence: "Essência da Água",
+            absurdium: "Absurdium",
+            cosmolite: "Cosmolita",
+            shadowEssence: "Essência da Sombra",
+            demonite: "Demonita",
+            eternium: "Eternium",
+            mysticite: "Mysticita",
+            lightEssence: "Essência da Luz",
+            soulstone: "Pedra da Alma",
+            arcanium: "Arcanium",
+            hellstone1: "Pedra Infernal Nível 1",
+            hellstone2: "Pedra Infernal Nível 2",
+            hellstone3: "Pedra Infernal Nível 3",
+            hellstone4: "Pedra Infernal Nível 4",
+            hellstone666: "Pedra Infernal Nível 666",
+            infinitum: "Infinitum",
+            omegaEssence: "Essência Ômega",
+            inverticolite: "Inverticolita",
+            meutronium: "Meutronium",
+            zettaWattCrystal: "Cristal ZettaWatt",
+            theGem: "A GEMA",
+            boneOfInfinity: "Osso do Infinito",
+            paperOfGods: "Papel dos Deuses",
+            heavenstone: "Pedra Celestial",
+            holoStone: "Holo-Pedra",
+            antiMud: "Anti-Lama",
+            quantumOrb: "Orbe Quântico",
+            sourceOfPower: "Fonte de Poder",
+            fractalium: "Fractalium",
+            postInfinityEssence: "Essência Pós-Infinito",
+            unsolvium: "Unsolvium",
+            thePortal: "O PORTAL"
         }
     }
 };
 
 const i18n = new VueI18n({
     locale: "en",
+    fallbackLocale: "en",
     messages,
 });
