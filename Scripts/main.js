@@ -21,17 +21,19 @@ var initialGame = JSON.stringify(game);
 
 const POWER_MINING = 0, POWER_CRAFTSMENSHIP = 1, POWER_EXPERTISE = 2, POWER_WISDOM = 3, POWER_EXQUISITY = 4;
 
-function onCreate()
-{
+function onCreate() {
+    let savedLanguage = localStorage.getItem("gameLanguage");
+    if (savedLanguage) {
+        game.settings.language = savedLanguage;
+        i18n.locale = savedLanguage;
+    }
+
     let blacklist = ["Settings", "CustomNotation", "Notation", "BarNotation"];
     let notations = Object.assign(ADNotations, ADCommunityNotations);
-    for(let n of Object.keys(notations))
-    {
-        if(!blacklist.includes(n))
-        {
+    for (let n of Object.keys(notations)) {
+        if (!blacklist.includes(n)) {
             let notation = new notations[n]();
-            if(game.numberFormatters.filter(no => no.name === notation.name).length === 0)
-            {
+            if (game.numberFormatters.filter(no => no.name === notation.name).length === 0) {
                 game.numberFormatters.push(new notations[n]());
             }
         }

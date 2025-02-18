@@ -614,8 +614,9 @@ var functions =
         changeLanguage: function(lang) {
             app.$i18n.locale = lang;
             game.settings.language = lang;
+            localStorage.setItem("gameLanguage", lang);
             saveGame();
-        },        
+        },              
         keyPressed: function(k)
         {
             return Utils.keyPressed(k)
