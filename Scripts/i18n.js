@@ -13,6 +13,11 @@ const messages = {
         hardReset: "Hard Reset",
         welcome: "Welcome to Idle Mine: Remix!",
 
+        upgrades: {
+            money: "Money Upgrades",
+            gems: "Gem Upgrades",
+            planetcoins: "PC Upgrades"
+        },
         story: {
             chapters: [
                 "Welcome to Idle Mine: Remix!",
@@ -148,7 +153,7 @@ const messages = {
             fractalium: {
                 text1: "You are in another realm. High amounts of energy and light, inverted minerals, and holograms. The values of these objects are tremendous. Even one of them means infinite wealth. Now, you make an even crazier discovery.",
                 quote: "z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c",
-                text2: "A fractal. Infinite complexity, yet so simple to describe. {{numberFormatter.format(150e30)}} $ is enough to buy a white dwarf, an Earth-sized ball of compressed carbon (a Diamond!).",
+                text2: "A fractal. Infinite complexity, yet so simple to describe. {value} $ is enough to buy a white dwarf, an Earth-sized ball of compressed carbon (a Diamond!).",
                 text3: "The cave is starting to get slimmer again, the end might be near?"
             },
             reachPortal: {
@@ -372,11 +377,6 @@ const messages = {
                 website: "My Website",
                 wiki: "Wiki"
             },
-            upgrades: {
-                money: "Money Upgrades",
-                gems: "Gem Upgrades",
-                planetcoins: "PC Upgrades"
-            }
         },
         stats: {
             damageClick: "Damage per Click",
@@ -487,6 +487,11 @@ const messages = {
         hardReset: "Resetar Tudo",
         welcome: "Bem-vindo ao Idle Mine: Remix!",
 
+        upgrades: {
+            money: "Melhorias de Dinheiro",
+            gems: "Melhorias de Gemas",
+            planetcoins: "Melhorias de Moedas Planetárias"
+        },
         story: {
             chapters: [
                 "Bem-vindo ao Idle Mine: Remix!",
@@ -622,7 +627,7 @@ const messages = {
             fractalium: {
                 text1: "Você está em outro reino. Altas quantidades de energia e luz, minerais invertidos e hologramas. O valor desses objetos é imenso. Apenas um deles significa riqueza infinita. Agora, você faz uma descoberta ainda mais insana.",
                 quote: "z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c",
-                text2: "Um fractal. Uma quantidade infinita de complexidade, e ainda assim tão simples de descrever. {{numberFormatter.format(150e30)}} $ são suficientes para comprar uma anã branca, uma esfera do tamanho da Terra feita de carbono comprimido (um diamante!).",
+                text2: "Um fractal. Uma quantidade infinita de complexidade, e ainda assim tão simples de descrever. {value} $ são suficientes para comprar uma anã branca, uma esfera do tamanho da Terra feita de carbono comprimido (um diamante!).",
                 text3: "A caverna está começando a se estreitar novamente, será que o fim está próximo?"
             },
             reachPortal: {
@@ -846,11 +851,6 @@ const messages = {
                 website: "Meu Site",
                 wiki: "Wiki"
             },
-            upgrades: {
-                money: "Melhorias de Dinheiro",
-                gems: "Melhorias de Gemas",
-                planetcoins: "Melhorias de Moedas Planetárias"
-            }
         },
         stats: {
             damageClick: "Dano por Clique",
@@ -901,37 +901,37 @@ const messages = {
             mithril: "Mithril",
             obsidian: "Obsidiana",
             earthEssence: "Essência da Terra",
-            orbium: "Orbium",
+            orbium: "Orbio",
             novalite: "Novalita",
             magicCrystal: "Cristal Mágico",
             darkstone: "Pedra Negra",
             adamantium: "Adamantium",
             fireEssence: "Essência de Fogo",
             lunalite: "Lunalita",
-            mysterium: "Mysterium",
+            mysterium: "Misterium",
             cursedBone: "Osso Amaldiçoado",
             windEssence: "Essência do Vento",
-            unobtanium: "Unobtanium",
-            sollite: "Sollita",
+            unobtanium: "Inobtânio",
+            sollite: "Solita",
             waterEssence: "Essência da Água",
-            absurdium: "Absurdium",
+            absurdium: "Absúrdio",
             cosmolite: "Cosmolita",
             shadowEssence: "Essência da Sombra",
             demonite: "Demonita",
-            eternium: "Eternium",
-            mysticite: "Mysticita",
+            eternium: "Eternita",
+            mysticite: "Misticita",
             lightEssence: "Essência da Luz",
             soulstone: "Pedra da Alma",
-            arcanium: "Arcanium",
+            arcanium: "Arcânio",
             hellstone1: "Pedra Infernal Nível 1",
             hellstone2: "Pedra Infernal Nível 2",
             hellstone3: "Pedra Infernal Nível 3",
             hellstone4: "Pedra Infernal Nível 4",
             hellstone666: "Pedra Infernal Nível 666",
-            infinitum: "Infinitum",
+            infinitum: "Infinito",
             omegaEssence: "Essência Ômega",
             inverticolite: "Inverticolita",
-            meutronium: "Meutronium",
+            meutronium: "Neutrônio",
             zettaWattCrystal: "Cristal ZettaWatt",
             theGem: "A GEMA",
             boneOfInfinity: "Osso do Infinito",
@@ -941,9 +941,9 @@ const messages = {
             antiMud: "Anti-Lama",
             quantumOrb: "Orbe Quântico",
             sourceOfPower: "Fonte de Poder",
-            fractalium: "Fractalium",
+            fractalium: "Fractalita",
             postInfinityEssence: "Essência Pós-Infinito",
-            unsolvium: "Unsolvium",
+            unsolvium: "Insolúvel",
             thePortal: "O PORTAL"
         }
     }

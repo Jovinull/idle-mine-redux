@@ -44,7 +44,15 @@ function onCreate()
 
     functions.loadGame();
 
+    applyTranslations();
+
     requestAnimationFrame(update);
+}
+
+function applyTranslations() {
+    game.mineObjects.forEach(obj => {
+        obj.name = i18n.t(obj.name);
+    });
 }
 
 function update()

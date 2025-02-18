@@ -37,7 +37,7 @@
                 <div>
                     <h4 v-if="settings.showMineObjLevel">#{{mineObjectLevel + 1}}</h4>
                     <mine-object :level="mineObjectLevel"></mine-object>
-                    <h2>{{currentMineObject.name}}</h2>
+                    <h2>{{ $t('mineObjects.' + currentMineObject.name) }}</h2>
                     <p>HP: {{formatNumber(currentMineObject.hp, 2, 1e12)}}</p>
                     <p>D: {{formatNumber(currentMineObject.def, 2, 1e12)}}</p>
                     <p style="margin: 0;">${{formatNumber(currentMineObject.value, 2, 1e12)}}</p>
@@ -392,11 +392,11 @@
                     <p>{{ $t('story.fractalium.text1') }}</p>
                     <div class="story-quote">
                         <mine-object :level="68" :nodamage="true"></mine-object>
-                        <span>{{ $t('story.fractalium.quote') }}</span>
+                        <span v-html="$t('story.fractalium.quote')"></span>
                     </div>
-                    <p>{{ $t('story.fractalium.text2') }}</p>
+                    <p>{{ $t('story.fractalium.text2', { value: numberFormatter.format(150e30) }) }}</p>
                     <p>{{ $t('story.fractalium.text3') }}</p>
-                </div>
+                </div>                
                 
                 <div v-if="storyDisplayed('reachPortal')">
                     <p>{{ $t('story.reachPortal.text1') }}</p>
