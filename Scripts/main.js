@@ -53,7 +53,11 @@ function onCreate() {
 
 function applyTranslations() {
     game.mineObjects.forEach(obj => {
-        obj.name = i18n.t(obj.name);
+        obj.name = `mineObjects.${obj.name.split('.').pop()}`;
+    });
+
+    game.specialMineObjects.forEach(entry => {
+        entry.obj.name = `specialMineObjects.${entry.obj.name.split('.').pop()}`;
     });
 }
 

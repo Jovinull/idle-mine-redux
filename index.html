@@ -37,7 +37,7 @@
                 <div>
                     <h4 v-if="settings.showMineObjLevel">#{{mineObjectLevel + 1}}</h4>
                     <mine-object :level="mineObjectLevel"></mine-object>
-                    <h2>{{ $t('mineObjects.' + currentMineObject.name) }}</h2>
+                    <h2>{{ $t(currentMineObject.name) }}</h2>
                     <p>HP: {{formatNumber(currentMineObject.hp, 2, 1e12)}}</p>
                     <p>D: {{formatNumber(currentMineObject.def, 2, 1e12)}}</p>
                     <p style="margin: 0;">${{formatNumber(currentMineObject.value, 2, 1e12)}}</p>
