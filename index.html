@@ -542,10 +542,10 @@
                     <div v-if="storyDisplayed('giagantia')">
                         <div class="story-quote">
                             <mine-object :level="138" :nodamage="true"></mine-object>
-                            <span>{{ $t('story.giagantia.quote') }}</span>
+                            <span v-html="$t('story.giagantia.quote')"></span>
                         </div>
-                        <p>{{ $t('story.giagantia.text1') }}</p>
-                    </div>
+                        <p v-html="$t('story.giagantia.text1')"></p>
+                    </div>                    
                 
                     <div v-if="storyDisplayed('garagantula')">
                         <div class="story-quote">
@@ -587,8 +587,8 @@
                 </div>
                 
                 <div v-if="storyDisplayed('breakWisdomEssence')">
-                    <p>{{ $t('story.breakWisdomEssence.text1') }}</p>
-                    <p>{{ $t('story.breakWisdomEssence.text2') }}</p>
+                    <p v-html="$t('story.breakWisdomEssence.text1')"></p>
+                    <p v-html="$t('story.breakWisdomEssence.text2')"></p>
                     <p>{{ $t('story.breakWisdomEssence.text3') }}</p>
                     <h4>{{ $t('story.breakWisdomEssence.howToGetWisdom') }}</h4>
                     <p>{{ $t('story.breakWisdomEssence.wisdomExplanation') }}</p>

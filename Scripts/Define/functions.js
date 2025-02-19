@@ -327,21 +327,27 @@ var functions =
             }
             return sum;
         },
-        getNextStoryText: function()
-        {
-            for(let k of Object.keys(game.story.milestones))
-            {
-                if(!functions.storyUnlocked(k))
-                {
-                    if(typeof game.story.milestones[k][1] === "function")
-                    {
-                        return game.story.milestones[k][1]();
+        getNextStoryText: function() {
+            for (let k of Object.keys(game.story.milestones)) {
+                if (!functions.storyUnlocked(k)) {
+                    let milestoneKey = game.story.milestones[k][1];
+        
+                    // Se milestoneKey for uma string (uma chave de tradução), traduzir com $t()
+                    if (typeof milestoneKey === "string" && i18n.te(milestoneKey)) {
+                        return i18n.t(milestoneKey);
                     }
-                    return game.story.milestones[k][1];
+        
+                    // Se for uma função, executá-la primeiro e depois traduzir se necessário
+                    if (typeof milestoneKey === "function") {
+                        let result = milestoneKey();
+                        return i18n.te(result) ? i18n.t(result) : result;
+                    }
+        
+                    return milestoneKey;
                 }
             }
             return null;
-        },
+        },        
         storyUnlocked: function(key)
         {
             return eval(game.story.milestones[key][0]);
