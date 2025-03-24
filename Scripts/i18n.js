@@ -1,6 +1,6 @@
 const messages = {
     en: {
-        title: "Idle Mine: Remix",
+        title: "Idle Mine: Redux",
         money: "Money",
         gems: "Gems",
         planetCoins: "Planet Coins",
@@ -11,7 +11,7 @@ const messages = {
         export: "Export",
         import: "Import",
         hardReset: "Hard Reset",
-        welcome: "Welcome to Idle Mine: Remix!",
+        welcome: "Welcome to Idle Mine: Redux!",
 
         upgrades: {
             money: "Money Upgrades",
@@ -20,7 +20,7 @@ const messages = {
         },
         story: {
             chapters: [
-                "Welcome to Idle Mine: Remix!",
+                "Welcome to Idle Mine: Redux!",
                 "The real Adventure begins!",
                 "Mysterious Materials",
                 "It's NOT over",
@@ -31,7 +31,7 @@ const messages = {
                 "Cosmic Superstructures"
             ],
             gameStart: {
-                title: "Welcome to Idle Mine: Remix!",
+                title: "Welcome to Idle Mine: Redux!",
                 text1: "So you have decided to start with mining. You have heard that many treasures lie below the surface, so you can't wait to find out what you can find. Maybe you can become rich?",
                 text2: "There's you, and your Auto-Mining-Device. Let's get started! This also acts as a sort of guide. If something is unclear, look into here as a reference."
             },
@@ -190,7 +190,7 @@ const messages = {
             pluto: {
                 text1: "You did it! You mined a planet! Hmm, it's just a dwarf planet, but it was a real planet until 2006.",
                 quote: "Almost a Planet",
-                text2: "Why do objects keep reappearing here after you mine them? It seems like the universe of *Idle Mine: Remix* ignores several laws of physics."
+                text2: "Why do objects keep reappearing here after you mine them? It seems like the universe of *Idle Mine: Redux* ignores several laws of physics."
             },
             theMoon: {
                 text1: "You just mined the Moon! Luckily, it reappears every time you mine it...",
@@ -278,7 +278,7 @@ const messages = {
                 text2: "There are even more upgrades related to wisdom. Numbers will only grow faster now!"
             },
             mineSun: {
-                text1: "You mined our Sun... well, since we're in the Idle Mine: Remix realm, the Sun reappeared the moment you mined it, so no worries!",
+                text1: "You mined our Sun... well, since we're in the Idle Mine: Redux realm, the Sun reappeared the moment you mined it, so no worries!",
                 quote: "Giver of Life"
             },
             minePolaris: {
@@ -617,7 +617,7 @@ const messages = {
         },
     },
     pt: {
-        title: "Idle Mine: Remix",
+        title: "Idle Mine: Redux",
         money: "Dinheiro",
         gems: "Gemas",
         planetCoins: "Moedas Planetárias",
@@ -628,16 +628,16 @@ const messages = {
         export: "Exportar",
         import: "Importar",
         hardReset: "Resetar Tudo",
-        welcome: "Bem-vindo ao Idle Mine: Remix!",
+        welcome: "Bem-vindo ao Idle Mine: Redux!",
 
         upgrades: {
             money: "Melhorias de Dinheiro",
             gems: "Melhorias de Gemas",
-            planetcoins: "Melhorias de Moedas Planetárias"
+            planetcoins: "Melhorias de MP"
         },
         story: {
             chapters: [
-                "Bem-vindo ao Idle Mine: Remix!",
+                "Bem-vindo ao Idle Mine: Redux!",
                 "A verdadeira aventura começa!",
                 "Materiais misteriosos",
                 "Ainda NÃO acabou",
@@ -648,19 +648,19 @@ const messages = {
                 "Superestruturas Cósmicas"
             ],
             gameStart: {
-                title: "Bem-vindo ao Idle Mine: Remix!",
+                title: "Bem-vindo ao Idle Mine: Redux!",
                 text1: "Então você decidiu começar a minerar. Você ouviu falar que muitos tesouros estão abaixo da superfície, então mal pode esperar para descobrir o que pode encontrar. Talvez você fique rico?",
                 text2: "Lá está você e seu Dispositivo de Mineração Automático. Vamos começar! Isso também funciona como um guia. Se algo não estiver claro, consulte aqui como referência."
             },
             firstMud: {
                 text1: "Você minerou seu primeiro pedaço de lama! Bem, não vale muito, mas você tem que começar de algum lugar.",
                 quote: "Apenas um pouco de lama comum",
-                text2: "Mesmo 2 $ podem ser um bom começo. Talvez você devesse tentar minerar algo mais valioso?"
+                text2: "Mesmo R$2 podem ser um bom começo. Talvez você devesse tentar minerar algo mais valioso?"
             },
             firstPaper: {
                 text1: "Você pega sua picareta e começa a bater em um velho dever de casa (Você não precisava mais dele, de qualquer maneira).",
                 quote: "Papel (Seu velho dever de casa)",
-                text2: "Por alguma razão, isso valia incríveis 10 $! Parece que você pegou o jeito. Infelizmente, você também descobre que era um pouco resistente à sua picareta, então você precisa criar uma melhor para continuar crescendo.",
+                text2: "Por alguma razão, isso valia incríveis R$10! Parece que você pegou o jeito. Infelizmente, você também descobre que era um pouco resistente à sua picareta, então você precisa criar uma melhor para continuar crescendo.",
                 howToGetGems: "Como conseguir Gemas?",
                 gemExplanation: "Toda vez que você minera algo, há uma chance de ganhar uma Gema, usada para criar Picaretas.",
                 statsTitle: "Estatísticas, Estatísticas, Estatísticas...",
@@ -676,32 +676,32 @@ const messages = {
             firstSalt: {
                 text1: "Você pega todo o sal da gaveta da cozinha e começa a martelá-lo com sua recém-forjada Picareta. Funciona surpreendentemente bem, você pensa.",
                 quote: "Sal (direto da sua cozinha)",
-                text2: "22 $! Isso é muito! Você pode comprar alguns jogos com isso, ou levar a mineração a sério e investir em sua Ferraria."
+                text2: "R$22! Isso é muito! Você pode comprar alguns jogos com isso, ou levar a mineração a sério e investir em sua Ferraria."
             },
             firstClay: {
                 text1: "Você vai até um lago próximo e cava um pouco de argila.",
                 quote: "Argila (fresca do lago)",
-                text2: "Já vale 50 $! Isso é muito mais do que o sal. Claro, foi mais difícil, mas a recompensa fala por si. Há uma caverna por perto. Aqui é onde a verdadeira aventura começa. Talvez você deva melhorar um pouco seu ferreiro e conseguir uma nova picareta antes de continuar."
+                text2: "Já vale R$50! Isso é muito mais do que o sal. Claro, foi mais difícil, mas a recompensa fala por si. Há uma caverna por perto. Aqui é onde a verdadeira aventura começa. Talvez você deva melhorar um pouco seu ferreiro e conseguir uma nova picareta antes de continuar."
             },
             firstStone: {
                 text1: "Claro, a primeira coisa que você vê ao entrar na caverna são Pedras e Rochas. E há muitas delas. Há muito o que minerar...",
                 quote: "Rocha (da entrada da caverna)",
-                text2: "120 $! Nada mal. Você vê um grande crescimento chegando. Aventure-se mais fundo na caverna e extraia materiais melhores e melhores. Não se esqueça de comprar melhorias e criar novas picaretas.",
+                text2: "R$120! Nada mal. Você vê um grande crescimento chegando. Aventure-se mais fundo na caverna e extraia materiais melhores e melhores. Não se esqueça de comprar melhorias e criar novas picaretas.",
                 offlineIncomeTitle: "Renda Offline",
                 offlineIncomeText: "Por até 6 horas, você pode ganhar 50% do seu dinheiro por segundo enquanto estiver offline. Você precisa estar offline por pelo menos 5 minutos para ser elegível para ganhar dinheiro offline."
             },
             tenThousand: {
                 quote: "Eu preciso ficar rico!",
-                text1: "Dez mil dólares! Isso com certeza é mais do que o salário médio. Acho que você já pode pagar seu sustento com isso.",
+                text1: "Dez mil reais! Isso com certeza é mais do que o salário médio. Acho que você já pode pagar seu sustento com isso.",
                 text2: "Mas também, melhorar sua tecnologia de mineração é muito caro, mas vai valer a pena rapidamente."
             },
             firstSpookyBone: {
                 text1: "Você já desceu bastante na mina. As coisas estão ficando valiosas lá embaixo. Os primeiros minerais anormais estão aparecendo.",
                 quote: "Ohhhh, Assustador!",
-                text2: "{amount} $ por um monte de ossos? Bem, eles são assustadores! Mesmo que você não saiba exatamente por quê..."
+                text2: "R${amount} por um monte de ossos? Bem, eles são assustadores! Mesmo que você não saiba exatamente por quê..."
             },
             millionaire: {
-                text1: "Existem várias maneiras de ganhar um milhão: vencer um programa de perguntas, ter um certo emprego ou minerar materiais preciosos? De qualquer forma, você acaba de alcançar **um milhão**!",
+                text1: "Existem várias maneiras de ganhar um milhão: vencer um programa de perguntas, ter um certo emprego ou minerar materiais preciosos? De qualquer forma, você acaba de alcançar <strong>um milhão</strong>!",
                 quote: "Rico. Agora de verdade.",
                 text2: "A jornada não termina aqui! Por que não ficar ainda mais rico? A caverna parece infinita."
             },
@@ -723,28 +723,31 @@ const messages = {
             fireEssence: {
                 text1: "Lá está ela. Outro tipo de essência. Desta vez, parece ser flamejante e muito quente. Infelizmente, você não tem um termômetro com você.",
                 quote: "QUENTE, QUENTE!",
-                text2: "Agora, você precisa de **apenas uma** para se tornar a pessoa mais rica do mundo. Alternativamente, você também poderia dar a cada pessoa no mundo cerca de 25 $. Isso seria suficiente para alguma comida."
+                text2: "Agora, você precisa de <strong>apenas</strong> uma para se tornar a pessoa mais rica do mundo. Alternativamente, você também poderia dar a cada pessoa no mundo cerca de R$25. Isso seria suficiente para alguma comida."
             },
             mysterium: {
                 quote: "Eu também não sei",
-                text1: "Essa coisa é tão preciosa que nem tem um nome, então vamos chamá-la de 'Mysterium', porque, afinal, é um mistério. Será para sempre misteriosa e o mistério nunca será resolvido. Quão misterioso é isso?"
+                text1: "Essa coisa é tão preciosa que nem tem um nome, então vamos chamá-la de 'Misterium', porque, afinal, é um mistério. Será para sempre misteriosa e o mistério nunca será resolvido. Quão misterioso é isso?"
             },
             fiftyTrillion: {
                 text1: "Isso com certeza é muito dinheiro. Talvez seja o suficiente para comprar a Lua?",
                 quote: "Mais rico do que rico",
-                text2: "Isso é o suficiente para pagar toda a dívida nacional dos EUA.",
-                button: "PAGAR"
-            },
+                text2: "Isso é o suficiente para pagar toda a dívida nacional do Brasil.",
+                button: "PAGAR",
+                notEnough: "Você não tem dinheiro suficiente para pagar a dívida agora.",
+                triedAnyway: "Você realmente tentou. Mas então percebeu que... isso é só um jogo.",
+                logMessage: "ERRO: Exceção ao tentar pagar a dívida nacional do Brasil: o dinheiro do jogo não pôde ser convertido para Reais."
+            },            
             lightEssence: {
                 text1: "Mais uma Essência encontrada. Esta brilha muito e é incrivelmente luminosa, tão brilhante que algumas delas poderiam iluminar uma cidade inteira.",
                 quote: "Ilumine-se!",
                 text2: "Você ainda não faz ideia de onde está o fim. Olhando para baixo, vê um aglomerado colorido de minerais, brilhando em muitas cores diferentes. Parece que isso vai mudar em breve."
             },
             hellStone: {
-                text1: "Após passar por vários aglomerados enormes de minerais e sentir que está descendo por muitos quilômetros, você começa a sentir o calor do ar aqui embaixo. Ainda é suportável, mas, alguns metros depois, uma **mudança repentina** acontece.",
+                text1: "Após passar por vários aglomerados enormes de minerais e sentir que está descendo por muitos quilômetros, você começa a sentir o calor do ar aqui embaixo. Ainda é suportável, mas, alguns metros depois, uma <strong>mudança repentina</strong> acontece.",
                 quote: "Isso é o inferno?",
-                text2: "Esses minerais são completamente diferentes. Eles são muito quentes, não brilham e não parecem bonitos. Por outro lado, valem uma fortuna e você sente que chegou ao fim. *Mas será que chegou mesmo?*"
-            },
+                text2: "Esses minerais são completamente diferentes. Eles são muito quentes, não brilham e não parecem bonitos. Por outro lado, valem uma fortuna e você sente que chegou ao fim. <em>Mas será que chegou mesmo?</em>"
+            },            
             hellStoneFinal: {
                 title: "O Fim?",
                 text1: "A Hellstone está ficando cada vez mais escura e difícil de quebrar; parece que o fim está próximo. De repente, a caverna termina. O chão está coberto com ainda mais Hellstone demoníaca. Elas são quase totalmente negras e parecem inquebráveis. Agora você precisa de uma Picareta muito boa.",
@@ -762,15 +765,15 @@ const messages = {
                 quote: "Não é apenas uma joia!"
             },
             gemUpgrades: {
-                text1: "**Você sente instantaneamente uma onda de sabedoria fluindo pelo seu corpo...**",
+                text1: "<strong>Você sente instantaneamente uma onda de sabedoria fluindo pelo seu corpo...</strong>",
                 text2: "É isso! Por que apenas dinheiro deveria ser investido em Melhorias? E se fizéssemos isso com gemas?",
                 quote: "Agora você tem muito mais utilidade",
-                text3: "Com gemas, agora você pode melhorar seu ferreiro, o Dispositivo de Mineração Automático e encontrar ainda mais gemas! **O crescimento infinito aguarda!**"
-            },
+                text3: "Com gemas, agora você pode melhorar seu ferreiro, o Dispositivo de Mineração Automático e encontrar ainda mais gemas! <strong>O crescimento infinito aguarda!</strong>"
+            },            
             fractalium: {
                 text1: "Você está em outro reino. Altas quantidades de energia e luz, minerais invertidos e hologramas. O valor desses objetos é imenso. Apenas um deles significa riqueza infinita. Agora, você faz uma descoberta ainda mais insana.",
                 quote: "z<sub>n+1</sub> = z<sub>n</sub><sup>2</sup> + c",
-                text2: "Um fractal. Uma quantidade infinita de complexidade, e ainda assim tão simples de descrever. {value} $ são suficientes para comprar uma anã branca, uma esfera do tamanho da Terra feita de carbono comprimido (um diamante!).",
+                text2: "Um fractal. Uma quantidade infinita de complexidade, e ainda assim tão simples de descrever. R${value} para comprar uma anã branca, uma esfera do tamanho da Terra feita de carbono comprimido (um diamante!).",
                 text3: "A caverna está começando a se estreitar novamente, será que o fim está próximo?"
             },
             reachPortal: {
@@ -807,8 +810,8 @@ const messages = {
             pluto: {
                 text1: "Você conseguiu! Você minerou um planeta! Hmm, é apenas um planeta anão, mas já foi um planeta de verdade até 2006.",
                 quote: "Quase um planeta",
-                text2: "Por que os objetos continuam reaparecendo depois que você os minera? Parece que o universo de *Idle Mine: Remix* ignora algumas leis da física."
-            },
+                text2: "Por que os objetos continuam reaparecendo depois que você os minera? Parece que o universo de <em>Idle Mine: Redux</em> ignora algumas leis da física."
+            },            
             theMoon: {
                 text1: "Você acabou de minerar a Lua! Felizmente, ela reaparece toda vez que você a minera...",
                 quote: "Homem na Lua",
@@ -836,7 +839,7 @@ const messages = {
                 text1: "WASP-79b é um dos maiores exoplanetas já descobertos. Ele tem cerca de duas vezes o tamanho de Júpiter, o que equivale a um diâmetro de mais de 250.000 quilômetros.",
                 quote: "Maior Planeta",
                 text2: "No universo, os planetas não podem crescer muito mais do que isso, pois a imensa massa e pressão no núcleo iniciariam uma fusão nuclear, transformando-o em uma estrela. Mas, neste jogo, a física é... diferente. Podemos ir além.<br/>Há uma quantidade infinita de exoplanetas a serem descobertos!"
-            },
+            },            
             hyperSaturn: {
                 text1: "Já viu um planeta semelhante a Saturno com um diâmetro de milhões de quilômetros? Bem, isso é impossível no nosso universo, mas aqui não é...",
                 quote: "Saturno, mas cerca de 100x maior",
@@ -851,7 +854,7 @@ const messages = {
                 text1: "Você sente que está chegando a planetas muito grandes agora. Eles são simplesmente imensos... Agora olhe para esses diâmetros:",
                 quote: "400.000.000 km",
                 text2: "<b>Colossia:</b> Se substituíssemos Saturno por este planeta, ele pareceria muito maior que a nossa Lua no céu. Ele destruiria nosso sistema solar devido à sua extrema força gravitacional."
-            },
+            },            
             giagantia: {
                 quote: "2.400.000.000 km",
                 text1: "<b>Giagantia:</b> Se substituído pelo nosso Sol, este planeta se estenderia até a órbita de Saturno. Ele também é quase tão grande quanto a maior estrela conhecida, UY Scuti."
@@ -876,7 +879,7 @@ const messages = {
                 text1: "Espere, o que é isso!? Enquanto relaxava e se movia pelo vácuo, você vê uma rocha voando, com alguns metros de tamanho. <i>Quais eram as chances?</i>",
                 quote: "Você precisa minerá-la.",
                 text2: "Ela é muito azul (mais azul que azul!) e, quanto mais perto você chega, mais inteligente você se sente.<br/>Quem sabe o que acontecerá ao minerá-la? Lembre-se do que aconteceu ao quebrar A GEMA. Você provavelmente ficará ainda mais forte depois de minerar esta pedra."
-            },
+            },            
             breakWisdomEssence: {
                 text1: "<i>A sabedoria flui para fora da pedra.</i> Você não pode vê-la, mas sente que está ficando mais inteligente a cada segundo.",
                 text2: "Você teve uma ideia: se você ficar mais inteligente, poderá descobrir como causar mais dano. Com mais dano, poderá ficar mais inteligente mais rápido. Hora de <b>sinergizar</b>!",
@@ -895,7 +898,7 @@ const messages = {
                 text2: "Existem ainda mais melhorias relacionadas à Sabedoria. Os números só crescerão mais rápido agora!"
             },
             mineSun: {
-                text1: "Você minerou nosso Sol... bem, como estamos no universo de Idle Mine: Remix, o Sol reapareceu no momento em que foi minerado, então não se preocupe!",
+                text1: "Você minerou nosso Sol... bem, como estamos no universo de Idle Mine: Redux, o Sol reapareceu no momento em que foi minerado, então não se preocupe!",
                 quote: "Doador de Vida"
             },
             minePolaris: {
@@ -950,7 +953,7 @@ const messages = {
             conclusion: {
                 title: "Conclusão",
                 text1: "Obrigado por jogar meu jogo! Isso marca o fim da história. Sua tarefa agora é explorar ainda mais o multiverso, cheio de infinitos novos universos para minerar.",
-                text2: "Eu me pergunto até onde os números podem chegar! Com os upgrades de gemas, o progresso deve ser sempre possível, e um obstáculo de progresso deve estar muito distante. Você pode alcançar {longGoal1} $?<br/> Não, sua sabedoria deve torná-lo ainda mais rápido... será que você pode alcançar {longGoal2} $? Isso é ∞<sup>4</sup>!",
+                text2: "Eu me pergunto até onde os números podem chegar! Com os upgrades de gemas, o progresso deve ser sempre possível, e um obstáculo de progresso deve estar muito distante. Você pode alcançar R${longGoal1}?<br/> Não, sua sabedoria deve torná-lo ainda mais rápido... será que você pode alcançar R${longGoal2}? Isso é ∞<sup>4</sup>!",
                 text3: "Isso não significa que seja o fim para sempre. Posso adicionar novo conteúdo no futuro para estender a história. De qualquer forma, espero que tenha se divertido jogando! :)"
             },
             nextObjective: {

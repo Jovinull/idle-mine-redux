@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Idle Mine: Remix</title>
+        <title>Idle Mine: Redux</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width"/>
         <link rel="stylesheet" href="main.css"/>
@@ -25,7 +25,7 @@
 <div id="app">
     <canvas id="cache" ref="cache" width="256" height="224"></canvas>
     <header>
-        <h1 style="flex-grow: 1;">Idle Mine: Remix</h1>
+        <h1 style="flex-grow: 1;">Idle Mine: Redux</h1>
         <span style="flex-grow: 1.1; text-align: center;">{{formatNumber(money, 2, 1e12)}} $</span>
         <span class="inline-resource" style="flex-grow: 1;  justify-content: flex-end;"><img class="inline" src="Images/gem.png"/> {{formatNumber(gems, 2, 1e12, 0)}}</span>
         <span class="inline-resource" v-if="highestMineObjectLevel >= 90" style="flex-grow: 1;  justify-content: flex-end;"><img class="inline" src="Images/planetcoin.png"/> {{formatNumber(planetCoins, 2, 1e12, 0)}}</span>
@@ -298,7 +298,7 @@
                 </div>
                 
                 <div v-if="storyDisplayed('millionaire')">
-                    <p>{{ $t('story.millionaire.text1') }}</p>
+                    <p v-html="$t('story.millionaire.text1')"></p>
                     <div class="story-quote"><img src="Images/money.png"/><span>{{ $t('story.millionaire.quote') }}</span></div>
                     <p>{{ $t('story.millionaire.text2') }}</p>
                 </div>
@@ -323,8 +323,11 @@
                 
                 <div v-if="storyDisplayed('fireEssence')">
                     <p>{{ $t('story.fireEssence.text1') }}</p>
-                    <div class="story-quote"><mine-object :level="33" :nodamage="true"></mine-object><span>{{ $t('story.fireEssence.quote') }}</span></div>
-                    <p>{{ $t('story.fireEssence.text2') }}</p>
+                    <div class="story-quote">
+                        <mine-object :level="33" :nodamage="true"></mine-object>
+                        <span>{{ $t('story.fireEssence.quote') }}</span>
+                    </div>
+                    <p v-html="$t('story.fireEssence.text2')"></p>
                 </div>
                 
                 <div v-if="storyDisplayed('mysterium')">
@@ -346,10 +349,14 @@
                 </div>
                 
                 <div v-if="storyDisplayed('hellStone')">
-                    <p>{{ $t('story.hellStone.text1') }}</p>
-                    <div class="story-quote"><mine-object :level="50" :nodamage="true"></mine-object><span>{{ $t('story.hellStone.quote') }}</span></div>
-                    <p>{{ $t('story.hellStone.text2') }}</p>
-                </div>                
+                    <p v-html="$t('story.hellStone.text1')"></p>
+                    <div class="story-quote">
+                        <mine-object :level="50" :nodamage="true"></mine-object>
+                        <span>{{ $t('story.hellStone.quote') }}</span>
+                    </div>
+                    <p v-html="$t('story.hellStone.text2')"></p>
+                </div>
+
                 <div v-if="storyDisplayed('hellStoneFinal')">
                     <h3>{{ $t('story.hellStoneFinal.title') }}</h3>
                     <p>{{ $t('story.hellStoneFinal.text1') }}</p>
@@ -379,13 +386,13 @@
                 </div>
                 
                 <div v-if="storyDisplayed('gemUpgrades')">
-                    <p><b>{{ $t('story.gemUpgrades.text1') }}</b></p>
+                    <p v-html="$t('story.gemUpgrades.text1')"></p>
                     <p>{{ $t('story.gemUpgrades.text2') }}</p>
                     <div class="story-quote">
-                        <img src="Images/gem.png"/>
+                        <img src="Images/gem.png" />
                         <span>{{ $t('story.gemUpgrades.quote') }}</span>
                     </div>
-                    <p>{{ $t('story.gemUpgrades.text3') }}</p>
+                    <p v-html="$t('story.gemUpgrades.text3')"></p>
                 </div>
                 
                 <div v-if="storyDisplayed('fractalium')">
@@ -458,8 +465,8 @@
                         <mine-object :level="100" :nodamage="true"></mine-object>
                         <span>{{ $t('story.pluto.quote') }}</span>
                     </div>
-                    <p>{{ $t('story.pluto.text2') }}</p>
-                </div>
+                    <p v-html="$t('story.pluto.text2')"></p>
+                </div>                
                 
                 <div v-if="storyDisplayed('theMoon')">
                     <p>{{ $t('story.theMoon.text1') }}</p>
@@ -510,8 +517,8 @@
                         <mine-object :level="114" :nodamage="true"></mine-object>
                         <span>{{ $t('story.wasp79b.quote') }}</span>
                     </div>
-                    <p>{{ $t('story.wasp79b.text2') }}</p>
-                </div>
+                    <p v-html="$t('story.wasp79b.text2')"></p>
+                </div>                
                 
                 <div v-if="storyDisplayed('hyperSaturn')">
                     <p>{{ $t('story.hyperSaturn.text1') }}</p>
@@ -537,7 +544,7 @@
                         <mine-object :level="137" :nodamage="true"></mine-object>
                         <span>{{ $t('story.colossia.quote') }}</span>
                     </div>
-                    <p>{{ $t('story.colossia.text2') }}</p>
+                    <p v-html="$t('story.colossia.text2')"></p>                    
                 
                     <div v-if="storyDisplayed('giagantia')">
                         <div class="story-quote">
@@ -552,16 +559,16 @@
                             <mine-object :level="139" :nodamage="true"></mine-object>
                             <span>{{ $t('story.garagantula.quote') }}</span>
                         </div>
-                        <p>{{ $t('story.garagantula.text1') }}</p>
+                        <p v-html="$t('story.garagantula.text1')"></p>
                     </div>
-                
+                    
                     <div v-if="storyDisplayed('planetOmega')">
                         <div class="story-quote">
                             <mine-object :level="140" :nodamage="true"></mine-object>
                             <span>{{ $t('story.planetOmega.quote') }}</span>
                         </div>
-                        <p>{{ $t('story.planetOmega.text1') }}</p>
-                    </div>
+                        <p v-html="$t('story.planetOmega.text1')"></p>
+                    </div>                    
                 </div>
                 
                 <div v-if="storyDisplayed('breakPlanetOmega')">
@@ -570,21 +577,21 @@
                         <mine-object :level="140" :nodamage="true"></mine-object>
                         <span>{{ $t('story.breakPlanetOmega.quote') }}</span>
                     </div>
-                    <p>{{ $t('story.breakPlanetOmega.text2') }}</p>
-                </div>
+                    <p v-html="$t('story.breakPlanetOmega.text2')"></p>
+                </div>                
                 
                 <div v-if="storyDisplayed('planet160')">
                     <p>{{ $t('story.planet160.text1') }}</p>
                 </div>
                 
                 <div v-if="storyDisplayed('reachWisdomEssence')">
-                    <p>{{ $t('story.reachWisdomEssence.text1') }}</p>
+                    <p v-html="$t('story.reachWisdomEssence.text1')"></p>
                     <div class="story-quote">
                         <mine-object :level="169" :nodamage="true"></mine-object>
                         <span>{{ $t('story.reachWisdomEssence.quote') }}</span>
                     </div>
-                    <p>{{ $t('story.reachWisdomEssence.text2') }}</p>
-                </div>
+                    <p v-html="$t('story.reachWisdomEssence.text2')"></p>
+                </div>                
                 
                 <div v-if="storyDisplayed('breakWisdomEssence')">
                     <p v-html="$t('story.breakWisdomEssence.text1')"></p>
@@ -657,12 +664,12 @@
                 </div>
                 
                 <div v-if="storyDisplayed('mineMilkyWay')">
-                    <p>{{ $t('story.mineMilkyWay.text') }}</p>
+                    <p>{{ $t('story.mineMilkyWay.text1') }}</p>
                     <div class="story-quote">
                         <mine-object :level="199" :nodamage="true"></mine-object>
                         <span>{{ $t('story.mineMilkyWay.quote') }}</span>
                     </div>
-                </div>
+                </div>                
                 
                 <div v-if="storyDisplayed('mineLocalGroup')">
                     <p>{{ $t('story.mineLocalGroup.text1') }}</p>
@@ -674,7 +681,7 @@
                 </div>
                 
                 <div v-if="storyDisplayed('mineGalaxyCluster')">
-                    <p>{{ $t('story.mineGalaxyCluster.text') }}</p>
+                    <p>{{ $t('story.mineGalaxyCluster.text1') }}</p>
                     <div class="story-quote">
                         <mine-object :level="208" :nodamage="true"></mine-object>
                         <span>{{ $t('story.mineGalaxyCluster.quote') }}</span>
@@ -682,15 +689,15 @@
                 </div>
                 
                 <div v-if="storyDisplayed('mineGalaxySuperCluster')">
-                    <p>{{ $t('story.mineGalaxySuperCluster.text') }}</p>
+                    <p>{{ $t('story.mineGalaxySuperCluster.text1') }}</p>
                     <div class="story-quote">
                         <mine-object :level="210" :nodamage="true"></mine-object>
                         <span>{{ $t('story.mineGalaxySuperCluster.quote') }}</span>
                     </div>
-                </div>
+                </div>                
                 
                 <div v-if="storyDisplayed('mineFilament')">
-                    <p>{{ $t('story.mineFilament.text') }}</p>
+                    <p>{{ $t('story.mineFilament.text1') }}</p>
                     <div class="story-quote">
                         <mine-object :level="212" :nodamage="true"></mine-object>
                         <span>{{ $t('story.mineFilament.quote') }}</span>
@@ -698,12 +705,12 @@
                 </div>
                 
                 <div v-if="storyDisplayed('reachUniverse')">
-                    <p>{{ $t('story.reachUniverse.text') }}</p>
+                    <p>{{ $t('story.reachUniverse.text1') }}</p>
                     <div class="story-quote">
                         <mine-object :level="214" :nodamage="true"></mine-object>
                         <span>{{ $t('story.reachUniverse.quote') }}</span>
                     </div>
-                </div>
+                </div>                
                 
                 <div v-if="storyDisplayed('mineUniverse')">
                     <p>{{ $t('story.mineUniverse.text1') }}</p>

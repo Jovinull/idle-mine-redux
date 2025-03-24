@@ -422,19 +422,17 @@ var functions =
                 },
                 50);
         },
-        payUSDebt: function()
-        {
-            if(game.money.lt(22e12))
-            {
-                alert("You can't afford to pay off the debt right now.")
+        payUSDebt: function () {
+            if (game.money.lt(22e12)) {
+                alert(this.$t('story.fiftyTrillion.notEnough'));
+            } else {
+                alert(this.$t('story.fiftyTrillion.triedAnyway'));
+                functions.logMessage(
+                    this.$t('story.fiftyTrillion.logMessage'),
+                    MessageColors.error
+                );
             }
-            else
-            {
-                alert("You really tried. But then you noticed that it's just a game.");
-                functions.logMessage("ERROR: Exception occurred while paying off US National debt: " +
-                    "game money couldn't be converted to USD", MessageColors.error);
-            }
-        },
+        },        
         getSaveString()
         {
             return btoa(escape(encodeURIComponent(JSON.stringify(game))));
